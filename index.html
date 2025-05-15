@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honyrx AI</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #mic {
+      margin-top: 150px;
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Honyrx AI</h1>
+  <img id="mic" src="microphone.png" alt="Microphone" onclick="startListening()">
+  <p id="result"></p>
+
+  <script>
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US'; // английский
+
+    function startListening() {
+      recognition.start();
+    }
+
+    function respond(text) {
+      let audioSrc = "";
+
+      if (text.includes("Hi!")) {
+        autext.includes("/%%%");
+      } else if (text.includes("Hi")) {
+        audioSrc = "how_are_you.mp3";
+      } else {
+        audioSrc = "dont_understand.mp3";
+      }
+
+      const audio = new Audio(audioSrc);
+      audio.play();
+    }
+  </script>
+</body>
+</html>
